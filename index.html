@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastLang Academy — премиальное обучение английскому</title>
+    <title>FastLang Academy - Премиальное обучение английскому</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -31,7 +31,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             font-family: 'Montserrat', sans-serif;
-            padding-top: 80px; /* Отступ для фиксированного хедера */
         }
 
         h1, h2, h3, h4 {
@@ -68,7 +67,19 @@
             }
         }
 
-        /* Навигация - ИСПРАВЛЕНА! */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Навигация */
         header {
             position: fixed;
             top: 0;
@@ -78,14 +89,12 @@
             background: rgba(248, 244, 233, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(13, 40, 24, 0.1);
-            padding: 15px 0;
+            padding: 20px 0;
             transition: all 0.4s ease;
         }
 
         header.scrolled {
-            padding: 10px 0;
-            background: rgba(248, 244, 233, 0.98);
-            box-shadow: 0 5px 25px rgba(13, 40, 24, 0.15);
+            padding: 15px 0;
         }
 
         nav {
@@ -95,14 +104,13 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--dark-green);
             text-decoration: none;
             display: flex;
             align-items: center;
             font-family: 'Cormorant Garamond', serif;
-            z-index: 1001;
         }
 
         .logo span {
@@ -112,7 +120,7 @@
         .logo i {
             margin-right: 10px;
             color: var(--gold);
-            font-size: 1.8rem;
+            font-size: 2.2rem;
         }
 
         .nav-links {
@@ -158,7 +166,6 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .menu-toggle span {
@@ -179,7 +186,6 @@
             overflow: hidden;
             background: linear-gradient(115deg, var(--dark-green) 0%, var(--medium-green) 100%);
             color: var(--cream);
-            margin-top: -80px; /* Компенсируем отступ body */
         }
 
         .hero::before {
@@ -728,26 +734,25 @@
             
             .nav-links {
                 position: fixed;
-                top: 0;
+                top: 80px;
                 left: 0;
                 width: 100%;
-                height: 100vh;
                 background: var(--cream);
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
                 padding: 30px 0;
-                clip-path: circle(0px at top right);
-                transition: clip-path 0.8s ease;
-                z-index: 999;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease;
+                z-index: 1000;
             }
             
             .nav-links.active {
-                clip-path: circle(1500px at top right);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
             
             .nav-links li {
-                margin: 20px 0;
+                margin: 15px 0;
             }
             
             .hero h1 {
@@ -842,7 +847,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>FastLang Academy — премиальное обучение английскому</h1>
-                <p>Программы обучения с индивидуальным подходом. Достигайте вершин мастерства вместе с нами!</p>
+                <pрограммы обучения с индивидуальным подходом. Достигайте вершин мастерства вместе с нами!</p>
                 <div class="time-note">
                     <i class="fas fa-clock"></i> Время занятий указано по Алматы
                 </div>
@@ -870,7 +875,7 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Экспертные преподаватели</h3>
-                    <p>Наши преподаватели имеют международные сертификаты и опыт преподавания английского языка.</p>
+                    <p>Наши преподаватели имеют международные сертификаты и многолетний опыт преподавания английского языка.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -890,8 +895,8 @@
                     <div class="feature-icon">
                         <i class="fas fa-gem"></i>
                     </div>
-                    <h3>Качество</h3>
-                    <p>Образование по доступным ценам с возможностью помесячной оплаты.</p>
+                    <h3>Премиум качество</h3>
+                    <p>Элитное образование по доступным ценам с возможностью помесячной оплаты.</p>
                 </div>
             </div>
         </div>
@@ -937,7 +942,7 @@
                     <div class="course-content">
                         <p class="course-info"><i class="fas fa-user"></i><strong>Преподаватель:</strong> IELTS 8.0, SAT 1570</p>
                         <p class="course-info"><i class="fas fa-clock"></i><strong>Формат:</strong> онлайн, 2 раза в неделю</p>
-                        <p class="course-info"><i class="fas fa-clock"></i><strong>Время:</strong> Вт 20:00, Пт 16:00 (Алматы)</p>
+                        <p class="course-info"><i class="fas fa-clock"></i><strong>Время:</strong> Вт 20:00, Пт 19:00 (Алматы)</p>
                         <p class="course-price">35$ / 19 000 ₸</p>
                         <div class="course-button">
                             <a href="https://wa.me/77057297968" class="btn">Записаться</a>
